@@ -1,27 +1,28 @@
 
 public class Chamado {
+    private static int totalChamados = 0;
+
+    private int numero;
     private String descricao;
     private Computador computador;
     private Tecnico tecnico;
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
+    public Chamado(int numero, String descricao) {
+        this.numero = numero;
         this.descricao = descricao;
+        totalChamados++;
     }
 
-    public Computador getComputador() {
-        return computador;
+    public static int getTotalChamados() {
+        return totalChamados;
+    }
+
+    public int getNumero() {
+        return numero;
     }
 
     public void setComputador(Computador computador) {
         this.computador = computador;
-    }
-
-    public Tecnico getTecnico() {
-        return tecnico;
     }
 
     public void setTecnico(Tecnico tecnico) {
@@ -29,6 +30,7 @@ public class Chamado {
     }
 
     public void exibirChamado() {
+        System.out.println("Numero: " + numero);
         System.out.println("Descricao: " + descricao);
 
         if (computador != null) {
