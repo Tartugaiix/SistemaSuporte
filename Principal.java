@@ -1,31 +1,23 @@
 
 public class Principal {
-
     public static void main(String[] args) {
+        TecnicoHardware tecnicoHardware = new TecnicoHardware();
+        tecnicoHardware.setNome("Emanuelle");
+        tecnicoHardware.setEspecialidade("Hardware");
 
-        Computador computador1 = new Computador();
+        TecnicoSoftware tecnicoSoftware = new TecnicoSoftware();
+        tecnicoSoftware.setNome("Carlos");
+        tecnicoSoftware.setEspecialidade("Software");
 
-        computador1.patrimonio = "PC001";
-        computador1.modelo = "Dell OptiPlex";
-        computador1.sistemaOperacional = "Windows 11";
-        computador1.ligado = false;
+        Atendimento atendimento1 = tecnicoHardware;
+        Atendimento atendimento2 = tecnicoSoftware;
 
-        Computador computador2 = new Computador();
+        System.out.println("=== ATENDIMENTO DE HARDWARE ===");
+        System.out.println("Tecnico: " + tecnicoHardware.getNome());
+        atendimento1.realizarAtendimento();
 
-        computador2.patrimonio = "PC002";
-        computador2.modelo = "Lenovo ThinkCentre";
-        computador2.sistemaOperacional = "Ubuntu Linux";
-        computador2.ligado = false;
-
-        System.out.println("=== PRIMEIRO COMPUTADOR ===");
-        computador1.ligar();
-        computador1.exibirInformacoes();
-
-        System.out.println("=== SEGUNDO COMPUTADOR ===");
-        computador2.ligar();
-        computador2.exibirInformacoes();
-
-        computador2.desligar();
-        computador2.exibirInformacoes();
+        System.out.println("\n=== ATENDIMENTO DE SOFTWARE ===");
+        System.out.println("Tecnico: " + tecnicoSoftware.getNome());
+        atendimento2.realizarAtendimento();
     }
 }
